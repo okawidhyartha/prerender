@@ -1,0 +1,10 @@
+version: ‘3.7’
+services:
+  prerender:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: okawidhyartha/prerender
+    container_name: prerender-service
+    ports:
+      - 3002:3000
