@@ -1,5 +1,24 @@
-Prerender
-===========================
+Prerender + Node JS 20 + Docker
+===============================
+
+This repository was forked from [https://github.com/prerender/prerender](https://github.com/prerender/prerender) and enhanced by implementing docker with Node JS 20.11.0.
+
+You can start by running
+
+```bash
+docker-compose build
+docker-compose up
+```
+
+or you can pull this docker by running
+
+```bash
+docker run --name prerender -p 3002:3000 -d okawidhyartha/prerender
+```
+
+This service runs on `http://localhost:3002`. To prerender your website you can add your web URL next to it (e.g. `http://localhost:3002/https://www.wikipedia.org/`). To run website on localhost you must use `host.docker.internal` for example to prerender `http://localhost:3000/` you can access this `http://localhost:3002/http://host.docker.internal:3000/`.
+
+--------
 
 Prerender is a node server that uses Headless Chrome to render HTML, screenshots, PDFs, and HAR files out of any web page. The Prerender server listens for an http request, takes the URL and loads it in Headless Chrome, waits for the page to finish loading by waiting for the network to be idle, and then returns your content.
 
